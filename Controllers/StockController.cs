@@ -17,12 +17,10 @@ namespace api.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
         private readonly IStockRepository _stockRepo;
-        public StockController(ApplicationDBContext context, IStockRepository stockRepo)
+        public StockController(IStockRepository stockRepo)
         {
             _stockRepo = stockRepo;
-            _context = context;
         }
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] QueryObject query)
