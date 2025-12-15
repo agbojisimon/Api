@@ -23,6 +23,7 @@ namespace api.Controllers
         {
             this._userManager = userManager;
             this._tokenService = tokenService;
+            this._signingManager = signInManager;
         }
 
         [HttpPost("login")]
